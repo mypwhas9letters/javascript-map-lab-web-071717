@@ -21,3 +21,30 @@ const zebraStripes = [
   { width: 0.59, color: null },
   { width: 7.31, color: null }
 ];
+
+var sortedRobots = robots.map(function
+(robot){
+  if (knownDecepticons.includes(robot.name)){
+    return Object.assign({}, robots,{
+    alliance: 'decepticon'
+  })
+}else{
+    return Object.assign({}, robots,{
+    alliance: 'autobot'
+  })
+}
+  })
+
+
+  var coloredZebraStripes = zebraStripes.map(function(zebra){
+    debugger
+    if (zebraStripes.indexOf(zebra) % 2 === 1){
+      return Object.assign({},zebra,{
+        color: "white"
+      })
+    }else{
+      return Object.assign({},zebra,{
+        color: "black"
+      })
+    }
+  })
